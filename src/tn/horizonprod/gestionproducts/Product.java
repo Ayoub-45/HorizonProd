@@ -1,11 +1,12 @@
+package tn.tn.gestionproducts;
 
 import java.time.LocalDate;
 
 public class Product {
-    int id;
-    String label;
-    String brand;
-    double price;
+    private int id;
+    private String label;
+    private String brand;
+    private double price;
 
     LocalDate expirationDate;
 
@@ -29,7 +30,8 @@ public class Product {
         this.id = id;
         this.label = label;
         this.brand = brand;
-        this.price = price;
+        if (price > 0)
+            this.price = price;
 
     }
 
@@ -41,6 +43,7 @@ public class Product {
         System.out.println("Expired: " + isExpired());
         System.out.println("ExpirationDate: " + expirationDate);
     }
+
     // In case we want to display meaningful data about each object
     /*
      * 
@@ -50,5 +53,42 @@ public class Product {
      * "\nprice:" + price + "}";
      * }
      */
+    public double getPrice() {
+        return price;
+    }
 
+    public int getId() {
+        return id;
+    }
+
+    public String getBrand() {
+        return brand;
+    }
+
+    public String getLabel() {
+        return label;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setBrand(String brand) {
+        this.brand = brand;
+    }
+
+    public void setExpirationDate(LocalDate expirationDate) {
+        this.expirationDate = expirationDate;
+    }
+
+    public void setLabel(String label) {
+        this.label = label;
+    }
+
+    public void setPrice(double price) {
+        if (price > 0)
+            this.price = price;
+        else
+            System.out.println("We cannot set a negative price !");
+    }
 }
