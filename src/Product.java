@@ -38,6 +38,7 @@ public class Product {
         System.out.println("label: " + label);
         System.out.println("brand: " + brand);
         System.out.println("Price: " + price);
+        System.out.println("Expired: " + isExpired());
         System.out.println("ExpirationDate: " + expirationDate);
     }
     // In case we want to display meaningful data about each object
